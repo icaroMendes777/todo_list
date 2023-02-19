@@ -46,7 +46,7 @@ h2{
   top: -15px;
 }
 
-textarea:focus, input:focus{
+textarea:focus, .input:focus{
   outline: none;
   border:2px solid darkblue;
 }
@@ -56,7 +56,7 @@ textarea:focus, input:focus{
     
 }
 
-input{
+.input{
   border:2px solid rgb(129, 200, 209);
   border-radius: 5px;
   background-color: black;
@@ -87,7 +87,7 @@ div{
 .tarefas_wrap{
   padding:0.5rem;
   background-color: rgb(145, 218, 236)  ;
-  width: 800px;
+  max-width: 800px;
   display:grid;
   grid-template-columns: auto auto;
 }
@@ -182,3 +182,21 @@ box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.75);
 .upside_up  {
   transform: rotate(0deg);
  }
+
+
+
+
+@media only screen and (max-width:430px) {
+  .item_tarefa{
+      width:350px;
+      overflow: scroll;
+  }
+
+  .input{
+    width:300px;
+  }
+
+  .tarefas_wrap{
+    padding: 0px;
+  }
+}

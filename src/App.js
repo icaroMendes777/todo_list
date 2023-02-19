@@ -10,13 +10,6 @@ const initialTodo = [
 ]
 
 
-//---console.log simplificado----
-function log(arg1='---', arg2='')
-{
-  console.log(arg1,arg2);
-}
-
-
 
 /*
 ==========================================
@@ -52,47 +45,15 @@ function App() {
 
   const [classUp, setClasslUp] = useState('upside_up');
  
- /*
 
-  const [delay, setDelay] = useState(false);
-  const [renewDelay, setrenewDelay] = useState(false);
 
-  window.addEventListener('keydown', (event) => {
-    if(event.key == "Backspace"){
-      upDownPencil();
-    }
-  });
+  //--------------------------------------------+++++++++++++++++++++++
+  
 
-  window.addEventListener('keyup', (event) => {
-    if(event.key == "Backspace"){
-      upUpPencil();
-    }
-  });
 
-  const upDownPencil = ()=>{
-    if(classUp == 'upside_down') return;
-    else setClasslUp('upside_down');
-  }
-
-  const upUpPencil = ()=>{
-    delayIt(function() {
-     // if(setDelay) return; ///--------
-      setClasslUp('upside_up');
-    });
-  }
-
-  const delayIt = (func)=>
-  {
-    setTimeout(function() {
-      func();
-    }, 2000);
-  }
-
-*/
   const movePencil = ()=>{
 
-    log('move', pLapis.left);
-    log('stl',mystyle);
+
     if (pLapis.left == '0px') 
       setPlapis(mystyleMove);
     else setPlapis(mystyle);
@@ -111,10 +72,8 @@ function App() {
 
 
   const deleteTodo = (index)=>{
-    //log('index',index);
 
     todoList.current.splice(index,1);
-    log('todo',todoList.current);
   
     //abaixo: somente para causar um re-render
     setRender(Math.random());
@@ -141,6 +100,7 @@ function App() {
         Nova tarefa:
           <input type="text"
           size='35'
+          className='input'
           value={newTask}
           onChange={(e) => {
             if(e.target.value.length < 35){
@@ -202,5 +162,4 @@ Lista - toDos
 }
 
 
-{/*===========================*/}
 export default App;
